@@ -11,6 +11,11 @@
 
     <artifactId>hot-deployment</artifactId>
 
+    <properties>
+        <jkube.watch.interval>1000</jkube.watch.interval>
+        <jkube.watch.showLogs>true</jkube.watch.showLogs>
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
