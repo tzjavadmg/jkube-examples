@@ -5,6 +5,8 @@
     <modelVersion>4.0.0</modelVersion>
     <modules>
         <module>nginx-ingress</module>
+        <module>hot-deployment</module>
+        <module>zero-config</module>
     </modules>
 
     <parent>
@@ -23,12 +25,24 @@
         <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <jkube.version>1.9.1</jkube.version>
+        <!-- 自定义镜像名称 -->
+        <jkube.generator.name>jkube-examples/${project.artifactId}</jkube.generator.name>
     </properties>
 
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.jolokia</groupId>
+            <artifactId>jolokia-core</artifactId>
         </dependency>
     </dependencies>
 </project>
