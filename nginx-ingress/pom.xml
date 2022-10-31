@@ -12,9 +12,47 @@
     <artifactId>nginx-ingress</artifactId>
 
     <properties>
-        <maven.compiler.source>17</maven.compiler.source>
-        <maven.compiler.target>17</maven.compiler.target>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <jkube.createExternalUrls>true</jkube.createExternalUrls>
     </properties>
 
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.eclipse.jkube</groupId>
+                <artifactId>kubernetes-maven-plugin</artifactId>
+                <version>${jkube.version}</version>
+
+                <configuration>
+                    <enricher>
+                        <config>
+                            <jkube-service>
+                                <type>LoadBalancer</type>
+                            </jkube-service>
+                        </config>
+                    </enricher>
+                    <resources>
+                        <ingress>
+                            <ingressRules>
+                                <ingressRule>
+                                    <host>codyzeng.k8s.com</host>
+                                    <paths>
+                                        <path>
+                                            <pathType>ImplementationSpecific</pathType>
+                                            <path>/</path>
+                                            <serviceName>${project.artifactId}</serviceName>
+                                            <servicePort>8080</servicePort>
+                                        </path>
+                                    </paths>
+                                </ingressRule>
+                            </ingressRules>
+                        </ingress>
+                    </resources>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>
