@@ -1,0 +1,9 @@
+metadata:
+  annotations:
+    api.service.kubernetes.io/path: /
+spec:
+  type: NodePort
+  ports:
+    - name: http
+      port: 8080
+      nodePort: 30000
