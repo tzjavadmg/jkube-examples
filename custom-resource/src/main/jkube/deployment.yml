@@ -12,7 +12,7 @@ spec:
       containers:
         - volumeMounts:
             - name: config
-              mountPath: /deployments/config
+              mountPath: /opt/config
           env:
             - name: MY_POD_NAMESPACE
               valueFrom:

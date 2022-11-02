@@ -11,11 +11,14 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class CustomResourceController {
 
-    @Value("${welcome}")
+    @Value("${welcome:no config}")
     private String welcome;
+
+    @Value("${name:no config}")
+    private String name;
 
     @RequestMapping("/")
     public String index() {
-        return welcome + "自定义k8s资源描述文件";
+        return name + " " + welcome;
     }
 }

@@ -11,6 +11,13 @@
 
     <artifactId>custom-resource</artifactId>
 
+    <properties>
+        <jkube.docker.host>tcp://172.19.29.29:2376</jkube.docker.host>
+        <jkube.docker.certPath>C:\Users\Lenovo\.minikube\certs</jkube.docker.certPath>
+<!--        <jkube.docker.logStdout>true</jkube.docker.logStdout>-->
+<!--        <jkube.build.source.dir>src/main/docker</jkube.build.source.dir>-->
+    </properties>
+
     <build>
         <plugins>
             <plugin>

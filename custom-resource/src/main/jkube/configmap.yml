@@ -4,4 +4,5 @@ data:
   application.properties: |
     # spring application properties file
     welcome = Hello from Kubernetes ConfigMap!!!
+    name = codyzeng
 

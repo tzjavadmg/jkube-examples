@@ -11,8 +11,8 @@
 
     <artifactId>docker-file</artifactId>
     <properties>
-<!--        <jkube.enricher.jkube-service.type>NodePort</jkube.enricher.jkube-service.type>-->
-<!--        <jkube.enricher.jkube-service.port>8080:8080</jkube.enricher.jkube-service.port>-->
+        <jkube.docker.host>tcp://172.19.29.29:2376</jkube.docker.host>
+        <jkube.docker.certPath>C:\Users\Lenovo\.minikube\certs</jkube.docker.certPath>
     </properties>
     <build>
         <plugins>
