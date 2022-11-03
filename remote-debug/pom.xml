@@ -18,6 +18,8 @@
         <jkube.enricher.jkube-service.type>NodePort</jkube.enricher.jkube-service.type>
         <jkube.enricher.jkube-service.port>8080:8080</jkube.enricher.jkube-service.port>
         <lombok.version>1.18.24</lombok.version>
+        <jkube.docker.host>tcp://172.19.29.29:2376</jkube.docker.host>
+        <jkube.docker.certPath>C:\Users\Lenovo\.minikube\certs</jkube.docker.certPath>
     </properties>
 
     <dependencies>
@@ -42,16 +44,6 @@
                 <groupId>org.eclipse.jkube</groupId>
                 <artifactId>kubernetes-maven-plugin</artifactId>
                 <version>${jkube.version}</version>
-
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>resource</goal>
-                            <goal>build</goal>
-                            <goal>deploy</goal>
-                        </goals>
-                    </execution>
-                </executions>
             </plugin>
         </plugins>
     </build>
